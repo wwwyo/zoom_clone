@@ -1,11 +1,7 @@
-import { ReactNode } from "react"
+import { ReactNode } from "react";
 
-function RootLayout({children}: {children: ReactNode}) {
-  return (
-    <main>
-      Navbar
-      {children}</main>
-  )
+function RootLayout({ children }: { children: ReactNode }) {
+  return <main>{children}</main>;
 }
 
-export default RootLayout
+export default RootLayout;
