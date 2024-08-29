@@ -22,9 +22,7 @@ export const MeetingTypeList = () => {
     | undefined
   >();
 
-  const createMeeting = () => {
-    console.log("createMeeting");
-  };
+  const createMeeting = () => {};
 
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
