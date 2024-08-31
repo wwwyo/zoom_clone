@@ -1,3 +1,5 @@
+"use client";
+
 import { tokenProvider } from "@/actions/stream.actions";
 import { useUser } from "@clerk/nextjs";
 import { StreamVideoClient, StreamVideo } from "@stream-io/video-react-sdk";
