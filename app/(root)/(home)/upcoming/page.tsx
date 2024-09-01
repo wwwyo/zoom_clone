@@ -1,7 +1,9 @@
+"use client";
+
 import { CallList } from "@/components/CallList";
 import { useGetCalls } from "@/hooks/useGetCalls";
 import { CallRecording } from "@stream-io/video-react-sdk";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const Upcoming = () => {
