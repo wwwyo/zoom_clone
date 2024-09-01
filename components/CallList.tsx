@@ -1,22 +1,30 @@
-import { CallList } from "@/components/CallList";
 import { useGetCalls } from "@/hooks/useGetCalls";
 import { CallRecording } from "@stream-io/video-react-sdk";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-const Upcoming = () => {
+export const CallList = ({
+  type,
+}: {
+  type: "ended" | "upcoming" | "recordings";
+}) => {
   const router = useRouter();
   const { endedCalls, upcomingCalls, callRecordings, isLoading } =
     useGetCalls();
   const [recordings, setRecordings] = useState<CallRecording[]>([]);
 
-  return (
-    <section className="flex size-full flex-col gap-10 text-white">
-      <h1 className="text-3xl font-bold">Upcoming Meeting</h1>
+  const getCalls = () => {
+    switch (type) {
+      case "ended":
+        return endedCalls;
+      case "recordings":
+        return recordings;
+      case "upcoming":
+        return upcomingCalls;
+      default:
+        return [];
+    }
+  };
 
-      <CallList type="upcoming" />
-    </section>
-  );
+  return <div>CallList</div>;
 };
-
-export default Upcoming;
